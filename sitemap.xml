@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.arbeitsrechner.de/</loc>
+    <loc>https://arbeits-rechner.de/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.arbeitsrechner.de/abfindungsrechner.html</loc>
+    <loc>https://arbeits-rechner.de/abfindungsrechner.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.arbeitsrechner.de/nettorechner.html</loc>
+    <loc>https://arbeits-rechner.de/nettorechner.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.arbeitsrechner.de/urlaubsrechner.html</loc>
+    <loc>https://arbeits-rechner.de/urlaubsrechner.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.arbeitsrechner.de/ueberstundenrechner.html</loc>
+    <loc>https://arbeits-rechner.de/ueberstundenrechner.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.arbeitsrechner.de/kuendigungsfrist.html</loc>
+    <loc>https://arbeits-rechner.de/kuendigungsfrist.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
