@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urlaubsabgeltung bei Kündigung 2025: Anspruch & Berechnung | ArbeitsRechner</title>
+  <meta name="description" content="Urlaubsabgeltung bei Kündigung: Wann besteht Anspruch? Wie wird sie berechnet? Mit Formel und Beispiel. Kostenlose Erklärung 2025.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://arbeits-rechner.de/urlaubsabgeltung.html">
+  <link rel="stylesheet" href="style.css">
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Urlaubsabgeltung bei Kündigung: Anspruch & Berechnung",
+    "description": "Wann haben Arbeitnehmer Anspruch auf Urlaubsabgeltung und wie wird sie berechnet?",
+    "url": "https://arbeits-rechner.de/urlaubsabgeltung.html",
+    "inLanguage": "de"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wann habe ich Anspruch auf Urlaubsabgeltung?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Urlaubsabgeltung entsteht, wenn das Arbeitsverhältnis endet und der noch offene Urlaub bis zu diesem Zeitpunkt nicht mehr in Natur genommen werden kann. Das gilt bei jeder Art der Beendigung: ordentliche Kündigung, fristlose Kündigung oder Aufhebungsvertrag."}
+      },
+      {
+        "@type": "Question",
+        "name": "Wie wird die Urlaubsabgeltung berechnet?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Die Urlaubsabgeltung berechnet sich nach der Formel: Jahresbruttolohn ÷ Jahresarbeitstage × Anzahl offener Urlaubstage. Bei einer 5-Tage-Woche betragen die Jahresarbeitstage 260. Ein Beispiel: Bei 36.000 € Jahresbrutto und 5 offenen Urlaubstagen ergibt sich: 36.000 ÷ 260 × 5 = 692,31 €."}
+      },
+      {
+        "@type": "Question",
+        "name": "Ist Urlaubsabgeltung steuerpflichtig?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Ja. Die Urlaubsabgeltung ist wie normales Arbeitsentgelt vollständig lohnsteuer- und sozialversicherungspflichtig. Sie wird dem monatlichen Lohn hinzugerechnet und entsprechend versteuert."}
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">⚖️ ArbeitsRechner.de</a>
+    <nav>
+      <a href="abfindungsrechner.html">Abfindung</a>
+      <a href="nettorechner.html">Nettolohn</a>
+      <a href="urlaubsrechner.html">Urlaub</a>
+      <a href="ueberstundenrechner.html">Überstunden</a>
+      <a href="kuendigungsfrist.html">Kündigung</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="calc-header">
+    <div class="breadcrumb"><a href="index.html">Home</a> › Urlaubsabgeltung</div>
+    <h1>Urlaubsabgeltung bei Kündigung 2025: Anspruch & Berechnung</h1>
+    <p>Wer kündigt oder gekündigt wird und noch offene Urlaubstage hat, hat Anspruch auf Urlaubsabgeltung. Wir erklären, wann der Anspruch entsteht, wie er berechnet wird und was häufig falsch gemacht wird.</p>
+  </div>
+
+  <div class="ad-slot ad-728">Werbung · 728×90</div>
+
+  <!-- Quick calculator -->
+  <div class="calc-card">
+    <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:1.25rem;">🏖️ Urlaubsabgeltung schnell berechnen</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="grossAnnual">Jahresbruttolohn (€)</label>
+        <input type="number" id="grossAnnual" placeholder="42000" min="0">
+      </div>
+      <div class="form-group">
+        <label for="workDaysPerWeek">Arbeitstage pro Woche</label>
+        <select id="workDaysPerWeek">
+          <option value="5" selected>5 Tage</option>
+          <option value="4">4 Tage</option>
+          <option value="3">3 Tage</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="openDays">Offene Urlaubstage</label>
+        <input type="number" id="openDays" placeholder="5" min="0" max="60">
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calcAbgeltung()">▶ Urlaubsabgeltung berechnen</button>
+    <div class="result-box" id="result">
+      <div class="result-label">Urlaubsabgeltung (brutto)</div>
+      <div class="result-value" id="rValue">–</div>
+      <div class="breakdown">
+        <div class="breakdown-row"><span>Jahresarbeitstage</span><span id="rAnnualDays">–</span></div>
+        <div class="breakdown-row"><span>Tagessatz</span><span id="rDayRate">–</span></div>
+        <div class="breakdown-row total"><span>Offene Tage × Tagessatz</span><span id="rTotal">–</span></div>
+      </div>
+      <div class="result-note">⚠️ Bruttobetrag vor Steuern und Sozialversicherung. Lohnsteuer und SV-Beiträge werden wie beim normalen Gehalt abgezogen.</div>
+    </div>
+  </div>
+
+  <div class="ad-slot ad-300" style="margin:0 auto 1.75rem;">Werbung · 300×250</div>
+
+  <div class="info-section">
+    <h2>Was ist Urlaubsabgeltung?</h2>
+    <p>Urlaubsabgeltung ist die <strong>Auszahlung nicht genommenen Urlaubs</strong> in Geld. Sie entsteht, wenn das Arbeitsverhältnis endet und der offene Urlaub bis zu diesem Zeitpunkt nicht mehr in Natur (also als tatsächliche Freistellung) gewährt werden kann.</p>
+    <p>Die Rechtsgrundlage ist <strong>§ 7 Abs. 4 Bundesurlaubsgesetz (BUrlG)</strong>: "Kann der Urlaub wegen Beendigung des Arbeitsverhältnisses ganz oder teilweise nicht mehr gewährt werden, so ist er abzugelten."</p>
+
+    <div style="background:#dbeafe;border:1.5px solid #3b82f6;border-radius:8px;padding:1rem 1.25rem;margin:1rem 0;">
+      <strong>ℹ️ Wichtig:</strong> Urlaubsabgeltung gibt es nur bei Beendigung des Arbeitsverhältnisses. Solange das Arbeitsverhältnis läuft, darf Urlaub nicht ausgezahlt werden – er muss genommen werden.
+    </div>
+
+    <h2>Wann entsteht der Anspruch?</h2>
+    <p>Der Anspruch auf Urlaubsabgeltung entsteht automatisch, wenn beide Voraussetzungen erfüllt sind:</p>
+    <ol style="padding-left:1.5rem;margin:0.5rem 0;">
+      <li style="margin-bottom:0.4rem;line-height:1.7"><strong>Das Arbeitsverhältnis endet</strong> – durch ordentliche Kündigung, fristlose Kündigung, Aufhebungsvertrag, Auslaufen eines befristeten Vertrags oder Tod des Arbeitnehmers (Erben können Anspruch geltend machen).</li>
+      <li style="margin-bottom:0.4rem;line-height:1.7"><strong>Noch offener Urlaub</strong> – der Urlaub wurde weder gewährt noch kann er vor dem Beendigungsdatum noch genommen werden.</li>
+    </ol>
+    <p>Wichtig: Wenn der Arbeitgeber den Arbeitnehmer bis zum Ende des Arbeitsverhältnisses freistellt und dabei ausdrücklich erklärt, dass die Freistellung zur Erfüllung des Urlaubsanspruchs dient, wird der Urlaub damit abgegolten – ohne zusätzliche Zahlung.</p>
+  </div>
+
+  <div class="info-section">
+    <h2>Wie wird die Urlaubsabgeltung berechnet?</h2>
+    <p>Die Berechnung erfolgt nach der Formel:</p>
+    <div class="formula-box">Tagessatz = Jahresbruttolohn ÷ Jahresarbeitstage<br>Abgeltung = Tagessatz × Anzahl offener Urlaubstage</div>
+
+    <h3>Jahresarbeitstage</h3>
+    <p>Bei einer <strong>5-Tage-Woche</strong> beträgt die Zahl der Jahresarbeitstage <strong>260</strong> (52 Wochen × 5). Feiertage, die auf Wochentage fallen, werden dabei <em>nicht</em> abgezogen – der Urlaubstagessatz berechnet sich aus dem Jahresbruttogehalt dividiert durch 260.</p>
+    <p>Bei 4- oder 3-Tage-Woche sind es 208 bzw. 156 Jahresarbeitstage.</p>
+
+    <h3>Rechenbeispiel</h3>
+    <p>Monatliches Bruttogehalt: 3.500 € → Jahresbrutto: 42.000 €. Offener Urlaub: 8 Tage. 5-Tage-Woche.</p>
+    <div class="formula-box">Tagessatz: 42.000 € ÷ 260 = 161,54 €<br>Abgeltung: 161,54 € × 8 = 1.292,31 €</div>
+    <p>Ausgezahlt werden jedoch nur der <strong>Nettobetrag</strong> – von der Urlaubsabgeltung werden Lohnsteuer und Sozialversicherungsbeiträge abgezogen wie beim normalen Gehalt.</p>
+
+    <h3>Was fließt in den Jahresbruttolohn ein?</h3>
+    <p>Der Urlaubsabgeltung liegt das <strong>regelmäßige Arbeitsentgelt</strong> zugrunde. Dazu gehören Grundgehalt, regelmäßige Zulagen und Prämien. Nicht einzubeziehen sind einmalige Leistungen wie Weihnachtsgeld oder Bonuszahlungen, die nicht regelmäßig gewährt werden.</p>
+  </div>
+
+  <div class="info-section">
+    <h2>Häufige Streitpunkte</h2>
+
+    <h3>Verfall bei langer Krankheit</h3>
+    <p>Bis 2011 verfiel Urlaubsanspruch, der wegen Krankheit nicht genommen werden konnte, nach 15 Monaten (31. März des übernächsten Jahres). Der Europäische Gerichtshof und der Bundesgerichtshof haben diese Regelung inzwischen stark eingeschränkt: Urlaubsansprüche verjähren erst nach 3 Jahren – aber nur, wenn der Arbeitgeber den Arbeitnehmer zuvor aktiv auf seinen Urlaub und dessen drohenden Verfall hingewiesen hat.</p>
+
+    <h3>Kein Verfall durch Eigenkündigung</h3>
+    <p>Ein verbreiteter Irrtum: Arbeitnehmer verlieren ihren Urlaubsabgeltungsanspruch nicht dadurch, dass sie selbst kündigen. § 7 Abs. 4 BUrlG gilt unabhängig davon, wer das Arbeitsverhältnis beendet.</p>
+
+    <h3>Freistellung "unter Anrechnung auf Urlaub"</h3>
+    <p>Wird ein Arbeitnehmer nach Kündigung freigestellt, erklärt der Arbeitgeber dabei oft, die Freistellung werde "unter Anrechnung von Urlaub und Überstunden" gewährt. Damit ist der Urlaubsanspruch verbraucht und es bleibt kein Abgeltungsanspruch. Achten Sie daher im Aufhebungsvertrag oder der Kündigung genau auf die Formulierung.</p>
+
+    <h3>Abgeltung bei Aufhebungsvertrag</h3>
+    <p>Im Aufhebungsvertrag muss der Umgang mit dem Resturlaub explizit geregelt sein: Entweder wird der Arbeitnehmer unter Anrechnung auf den Urlaub freigestellt, oder der Urlaub wird als Geldleistung abgegolten. Klären Sie das unbedingt vor der Unterzeichnung. Mehr dazu in unserem <a href="aufhebungsvertrag.html">Aufhebungsvertrag-Artikel</a>.</p>
+  </div>
+
+  <div class="info-section">
+    <h2>Häufige Fragen zur Urlaubsabgeltung</h2>
+    <div class="faq-item">
+      <div class="faq-q">Kann der Arbeitgeber die Urlaubsabgeltung verweigern?</div>
+      <div class="faq-a">Nein, sofern ein wirksamer Anspruch besteht. Der Arbeitgeber kann die Abgeltung nicht verweigern oder kürzen, wenn das Arbeitsverhältnis endet und Urlaub noch offen ist. Verweigert er die Zahlung, kann der Arbeitnehmer Klage vor dem Arbeitsgericht einreichen.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Wann muss der Anspruch geltend gemacht werden?</div>
+      <div class="faq-a">Der Anspruch auf Urlaubsabgeltung unterliegt der regulären Verjährungsfrist von 3 Jahren (§ 195 BGB), beginnend zum Ende des Jahres, in dem das Arbeitsverhältnis endete. Viele Arbeitsverträge enthalten jedoch kürzere Ausschlussfristen (Verfallfristen) von 2–3 Monaten nach Fälligkeit. Diese können auch den Abgeltungsanspruch erfassen – prüfen Sie Ihren Vertrag.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Wie viel Urlaub steht mir anteilig bei Kündigung zu?</div>
+      <div class="faq-a">Bei Ausscheiden in der ersten Jahreshälfte (vor dem 1. Juli) steht Ihnen anteilig 1/12 des Jahresanspruchs pro Beschäftigungsmonat zu. Bei Ausscheiden ab dem 1. Juli nach mindestens 6 Monaten Beschäftigung gilt der volle Jahresanspruch. Berechnen Sie Ihren anteiligen Anspruch mit unserem <a href="urlaubsrechner.html">Urlaubsrechner</a>.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Ist Urlaubsabgeltung sozialversicherungspflichtig?</div>
+      <div class="faq-a">Ja. Die Urlaubsabgeltung ist wie normales Arbeitsentgelt beitragspflichtig zur Kranken-, Pflege-, Renten- und Arbeitslosenversicherung. Sie ist damit anders zu behandeln als eine Abfindung (die sozialversicherungsfrei ist).</div>
+    </div>
+  </div>
+
+  <div class="other-tools">
+    <h3>Passende Rechner & weitere Artikel</h3>
+    <div class="other-tools-grid">
+      <a href="urlaubsrechner.html">🏖️ Urlaubsrechner</a>
+      <a href="aufhebungsvertrag.html">📝 Aufhebungsvertrag</a>
+      <a href="kuendigung-schreiben.html">✍️ Kündigung schreiben</a>
+      <a href="kuendigungsfrist.html">📄 Kündigungsfristrechner</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 ArbeitsRechner.de – Alle Angaben ohne Gewähr. Keine Rechtsberatung.</div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function calcAbgeltung() {
+  const gross = parseFloat(document.getElementById('grossAnnual').value);
+  const wdpw  = parseInt(document.getElementById('workDaysPerWeek').value);
+  const open  = parseFloat(document.getElementById('openDays').value);
+
+  if (!gross || !open) { alert('Bitte Jahresbrutto und offene Urlaubstage eingeben.'); return; }
+
+  const annualDays = wdpw * 52;
+  const dayRate    = gross / annualDays;
+  const total      = dayRate * open;
+
+  const fmt = n => n.toLocaleString('de-DE', {minimumFractionDigits:2, maximumFractionDigits:2}) + ' €';
+
+  document.getElementById('rValue').textContent     = fmt(total);
+  document.getElementById('rAnnualDays').textContent = annualDays + ' Tage';
+  document.getElementById('rDayRate').textContent   = fmt(dayRate);
+  document.getElementById('rTotal').textContent     = open + ' Tage × ' + fmt(dayRate);
+
+  const box = document.getElementById('result');
+  box.classList.add('show');
+  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+document.addEventListener('keydown', e => { if (e.key === 'Enter') calcAbgeltung(); });
+</script>
+</body>
+</html>
