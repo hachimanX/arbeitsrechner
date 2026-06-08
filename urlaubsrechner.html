@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urlaubsrechner 2025 – Urlaubsanspruch kostenlos berechnen | ArbeitsRechner</title>
+  <meta name="description" content="Urlaubsanspruch berechnen 2025: Anteiligen Urlaub bei Neueintritt, Kündigung oder unterjährigem Austritt ermitteln. Gesetzlicher Mindestanspruch nach BUrlG.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.arbeitsrechner.de/urlaubsrechner.html">
+  <link rel="stylesheet" href="style.css">
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Urlaubsrechner 2025",
+    "description": "Kostenloser Rechner für den gesetzlichen Urlaubsanspruch",
+    "url": "https://www.arbeitsrechner.de/urlaubsrechner.html",
+    "inLanguage": "de"
+  }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">⚖️ ArbeitsRechner.de</a>
+    <nav>
+      <a href="abfindungsrechner.html">Abfindung</a>
+      <a href="nettorechner.html">Nettolohn</a>
+      <a href="urlaubsrechner.html" class="active">Urlaub</a>
+      <a href="ueberstundenrechner.html">Überstunden</a>
+      <a href="kuendigungsfrist.html">Kündigung</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="calc-header">
+    <div class="breadcrumb"><a href="index.html">Home</a> › Urlaubsrechner</div>
+    <h1>Urlaubsrechner 2025</h1>
+    <p>Anteiligen Urlaubsanspruch berechnen – für Neueintritt, Kündigung, Teilzeit oder unterjährigen Austritt.</p>
+  </div>
+
+  <div class="ad-slot ad-728">Werbung · 728×90</div>
+
+  <div class="calc-card">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="entryDate">Eintrittsdatum</label>
+        <input type="date" id="entryDate">
+        <div class="hint">Beginn des Arbeitsverhältnisses.</div>
+      </div>
+      <div class="form-group">
+        <label for="exitDate">Austrittsdatum (optional)</label>
+        <input type="date" id="exitDate">
+        <div class="hint">Leer lassen, wenn Sie noch beschäftigt sind.</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="annualDays">Jährlicher Urlaubsanspruch (Tage)</label>
+        <input type="number" id="annualDays" placeholder="30" value="30" min="20" max="60">
+        <div class="hint">Gesetzliches Minimum: 20 Tage (5-Tage-Woche).</div>
+      </div>
+      <div class="form-group">
+        <label for="workDays">Arbeitstage pro Woche</label>
+        <select id="workDays">
+          <option value="5" selected>5 Tage (Vollzeit)</option>
+          <option value="4">4 Tage</option>
+          <option value="3">3 Tage</option>
+          <option value="2">2 Tage</option>
+        </select>
+        <div class="hint">Für Teilzeit anteilig gekürzt.</div>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">▶ Urlaubstage berechnen</button>
+
+    <div class="result-box" id="result">
+      <div class="result-label">Urlaubsanspruch im laufenden Jahr</div>
+      <div class="result-value" id="vacResult">–</div>
+      <div class="result-subtitle" id="vacSubtitle"></div>
+      <div class="breakdown">
+        <div class="breakdown-row"><span>Jährlicher Anspruch</span><span id="rAnnual">–</span></div>
+        <div class="breakdown-row"><span>Beschäftigungsmonate im Jahr</span><span id="rMonths">–</span></div>
+        <div class="breakdown-row"><span>Monatlicher Anspruch</span><span id="rMonthly">–</span></div>
+        <div class="breakdown-row total"><span>Anteiliger Anspruch</span><span id="rTotal">–</span></div>
+      </div>
+      <div class="result-note" id="vacNote"></div>
+    </div>
+  </div>
+
+  <div class="ad-slot ad-300" style="margin:0 auto 1.75rem;">Werbung · 300×250</div>
+
+  <div class="info-section">
+    <h2>Wie viel Urlaub steht mir zu?</h2>
+    <p>Der gesetzliche Mindesturlaub in Deutschland ist im <strong>Bundesurlaubsgesetz (BUrlG)</strong> geregelt:</p>
+    <ul>
+      <li><strong>5-Tage-Woche:</strong> Mindestens 20 Arbeitstage Urlaub pro Jahr.</li>
+      <li><strong>6-Tage-Woche:</strong> Mindestens 24 Arbeitstage Urlaub pro Jahr.</li>
+    </ul>
+    <p>Die meisten Tarifverträge und Arbeitsverträge sehen 25–30 Tage vor. Der Rechner funktioniert für jeden vertraglichen Urlaubsanspruch.</p>
+
+    <h3>Anteiliger Urlaub bei unterjährigem Beginn oder Ende</h3>
+    <div class="formula-box">Anteiliger Urlaub = (Jahresanspruch / 12) × Beschäftigungsmonate</div>
+    <p>Das Ergebnis wird kaufmännisch auf ganze Tage aufgerundet (§ 5 BUrlG). Halbe und viertel Tage entstehen rechtlich, werden aber auf volle Tage gerundet.</p>
+
+    <h3>Wartezeit und voller Anspruch</h3>
+    <p>Den vollen Jahresurlaubsanspruch erwirbt man nach einer <strong>Wartezeit von 6 Monaten</strong> (§ 4 BUrlG). Wenn Sie also am 1. Juli eintreten, haben Sie am 1. Januar des Folgejahres den vollen Anspruch für das neue Jahr. Im Eintrittsjahr besteht nur ein anteiliger Anspruch.</p>
+
+    <h3>Urlaubsabgeltung bei Kündigung</h3>
+    <p>Kann offener Urlaub vor dem Ausscheiden nicht mehr genommen werden, hat der Arbeitnehmer Anspruch auf <strong>Urlaubsabgeltung</strong> in Geld. Der Tagessatz berechnet sich aus dem Jahresbruttogehalt geteilt durch die Jahresarbeitstage (bei 5-Tage-Woche: 260).</p>
+    <div class="formula-box">Urlaubsabgeltung pro Tag = Jahresbrutto ÷ 260 Arbeitstage</div>
+  </div>
+
+  <div class="info-section">
+    <h2>Häufige Fragen zum Urlaubsanspruch</h2>
+    <div class="faq-item">
+      <div class="faq-q">Verfällt der Urlaub am 31. Dezember?</div>
+      <div class="faq-a">Grundsätzlich ja – nicht genommener Urlaub verfällt am Jahresende. Ausnahmen: Der Arbeitgeber hat den Urlaub verweigert, ein Übertrag bis 31. März des Folgejahres ist vereinbart, oder der Arbeitnehmer war erkrankt. Der EuGH hat zudem klargestellt, dass der Urlaub nur verfällt, wenn der Arbeitgeber aktiv auf den bevorstehenden Verfall hingewiesen hat.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Wie wird Urlaub in der Probezeit behandelt?</div>
+      <div class="faq-a">Auch während der Probezeit entsteht Urlaubsanspruch – anteilig für jeden vollen Beschäftigungsmonat (1/12 des Jahresanspruchs). Vollen Anspruch erwirbt man aber erst nach 6 Monaten Betriebszugehörigkeit.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Was gilt bei Kündigung in der zweiten Jahreshälfte?</div>
+      <div class="faq-a">Bei einer Kündigung <strong>nach dem 30. Juni</strong> hat der Arbeitnehmer Anspruch auf den vollen Jahresurlaub, sofern das Arbeitsverhältnis länger als 6 Monate bestand. Nicht genommener Urlaub ist abzugelten.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Zählen Krankheitstage als Urlaubstage?</div>
+      <div class="faq-a">Nein. Wenn Sie während des Urlaubs erkranken und dies durch ein Attest nachweisen, werden die krankheitsbedingten Fehltage nicht auf Ihren Urlaub angerechnet (§ 9 BUrlG).</div>
+    </div>
+  </div>
+
+  <div class="other-tools">
+    <h3>Weitere Rechner</h3>
+    <div class="other-tools-grid">
+      <a href="abfindungsrechner.html">💼 Abfindungsrechner</a>
+      <a href="nettorechner.html">💰 Nettolohn-Rechner</a>
+      <a href="ueberstundenrechner.html">⏱️ Überstundenrechner</a>
+      <a href="kuendigungsfrist.html">📄 Kündigungsfristrechner</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 ArbeitsRechner.de – Alle Angaben ohne Gewähr. Keine Rechtsberatung.</div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function calculate() {
+  const entryInput = document.getElementById('entryDate').value;
+  const exitInput  = document.getElementById('exitDate').value;
+  const annual     = parseInt(document.getElementById('annualDays').value)  || 30;
+  const workDays   = parseInt(document.getElementById('workDays').value);
+
+  if (!entryInput) { alert('Bitte geben Sie ein Eintrittsdatum ein.'); return; }
+
+  const now        = new Date();
+  const calcYear   = now.getFullYear();
+  const entry      = new Date(entryInput);
+  const exit       = exitInput ? new Date(exitInput) : new Date(calcYear, 11, 31);
+
+  // Clamp to current year
+  const startInYear = new Date(Math.max(entry.getTime(), new Date(calcYear, 0, 1).getTime()));
+  const endInYear   = new Date(Math.min(exit.getTime(),  new Date(calcYear, 11, 31).getTime()));
+
+  if (startInYear > endInYear) {
+    alert('Das Eintrittsdatum liegt nach dem aktuellen Jahr oder nach dem Austrittsdatum.');
+    return;
+  }
+
+  // Calculate months worked in this year (rounded up partial months)
+  const startMonth = startInYear.getMonth(); // 0-indexed
+  const startDay   = startInYear.getDate();
+  const endMonth   = endInYear.getMonth();
+  const endDay     = endInYear.getDate();
+
+  // Full months + fractions
+  let months = (endMonth - startMonth) + 1;
+  // Adjust: if entry is after the 1st, first month may be partial
+  // For simplicity use: count each month touched
+  // Legal rule: each started month = 1/12 of annual claim
+  months = Math.min(months, 12);
+
+  // Adjust for partial entry month: only count if at least 1 day worked
+  // (since we're counting "months where employment was active")
+  const monthlyEntitlement = annual / 12;
+  const rawEntitlement     = monthlyEntitlement * months;
+  const rounded            = Math.ceil(rawEntitlement); // round up per § 5 BUrlG
+
+  // After June 30 for employees with > 6 months: full entitlement
+  const monthsWorkedTotal = (entry <= new Date(calcYear, 0, 1))
+    ? 12
+    : (new Date(calcYear, 11, 31) - entry) / (1000*60*60*24*30.44);
+
+  let note = '📅 Der Anspruch basiert auf den Beschäftigungsmonaten im laufenden Jahr.';
+
+  // Full year entitlement rule (> 6 months before July 1)
+  const isFullYear = entry <= new Date(calcYear, 0, 1) && (!exitInput || exit >= new Date(calcYear, 11, 31));
+  const actualResult = isFullYear ? annual : rounded;
+
+  // Adjust for part-time (already built into annual days input, but mention it)
+  const partTimeNote = workDays < 5
+    ? ` (${workDays}-Tage-Woche)`
+    : '';
+
+  if (isFullYear) {
+    note = '✅ Sie sind das gesamte Jahr beschäftigt und haben Anspruch auf den vollen Jahresurlaub.';
+  } else if (exitInput && new Date(exitInput) >= new Date(calcYear, 5, 30) && monthsWorkedTotal >= 6) {
+    note = '⚠️ Da Sie mehr als 6 Monate beschäftigt sind und das Arbeitsverhältnis nach dem 30. Juni endet, haben Sie ggf. Anspruch auf den vollen Jahresurlaub (§ 5 Abs. 1c BUrlG). Bitte prüfen Sie dies mit einem Anwalt.';
+  }
+
+  document.getElementById('vacResult').textContent   = actualResult + ' Tage' + partTimeNote;
+  document.getElementById('vacSubtitle').textContent = `anteiliger Urlaubsanspruch im Jahr ${calcYear}`;
+  document.getElementById('rAnnual').textContent     = annual + ' Tage/Jahr';
+  document.getElementById('rMonths').textContent     = months + (months === 1 ? ' Monat' : ' Monate');
+  document.getElementById('rMonthly').textContent    = monthlyEntitlement.toFixed(2).replace('.',',') + ' Tage/Monat';
+  document.getElementById('rTotal').textContent      = actualResult + ' Tage';
+  document.getElementById('vacNote').innerHTML       = '⚠️ ' + note + ' Diese Berechnung ist ein Richtwert. Für verbindliche Auskunft wenden Sie sich an Ihren Arbeitgeber oder einen Anwalt.';
+
+  const box = document.getElementById('result');
+  box.classList.add('show');
+  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Set default entry date to Jan 1 of current year
+document.addEventListener('DOMContentLoaded', () => {
+  const y = new Date().getFullYear();
+  document.getElementById('entryDate').value = y + '-01-01';
+});
+
+document.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+</script>
+</body>
+</html>

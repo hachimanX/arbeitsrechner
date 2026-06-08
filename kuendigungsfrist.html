@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kündigungsfristrechner 2025 – Kündigungsfrist berechnen | ArbeitsRechner</title>
+  <meta name="description" content="Kündigungsfrist berechnen 2025: Gesetzliche Kündigungsfrist nach § 622 BGB ermitteln. Letzten möglichen Kündigungstag und Enddatum sofort berechnen.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.arbeitsrechner.de/kuendigungsfrist.html">
+  <link rel="stylesheet" href="style.css">
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie lang ist die gesetzliche Kündigungsfrist?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Die Grundkündigungsfrist beträgt 4 Wochen zum 15. oder zum Ende eines Kalendermonats (§ 622 Abs. 1 BGB). Bei längerer Betriebszugehörigkeit verlängert sich die Frist für den Arbeitgeber: ab 2 Jahren 1 Monat, ab 5 Jahren 2 Monate, ab 8 Jahren 3 Monate, ab 10 Jahren 4 Monate, ab 12 Jahren 5 Monate, ab 15 Jahren 6 Monate, ab 20 Jahren 7 Monate – jeweils zum Monatsende."}
+      },
+      {
+        "@type": "Question",
+        "name": "Gilt die Kündigungsfrist auch für Arbeitnehmer?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Ja. Für die Kündigung durch den Arbeitnehmer gilt stets die Grundfrist: 4 Wochen zum 15. oder zum Monatsende, unabhängig von der Betriebszugehörigkeit. Verlängerte Fristen für den Arbeitgeber gelten nicht für Arbeitnehmer."}
+      },
+      {
+        "@type": "Question",
+        "name": "Kann die Kündigungsfrist vertraglich verlängert oder verkürzt werden?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Verlängerungen sind grundsätzlich zulässig, solange für den Arbeitnehmer keine längere Frist gilt als für den Arbeitgeber. Verkürzungen sind nur per Tarifvertrag oder bei befristeten Kleinstbetrieben (< 20 Mitarbeiter) auf mindestens 4 Wochen möglich."}
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">⚖️ ArbeitsRechner.de</a>
+    <nav>
+      <a href="abfindungsrechner.html">Abfindung</a>
+      <a href="nettorechner.html">Nettolohn</a>
+      <a href="urlaubsrechner.html">Urlaub</a>
+      <a href="ueberstundenrechner.html">Überstunden</a>
+      <a href="kuendigungsfrist.html" class="active">Kündigung</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="calc-header">
+    <div class="breadcrumb"><a href="index.html">Home</a> › Kündigungsfristrechner</div>
+    <h1>Kündigungsfristrechner 2025</h1>
+    <p>Gesetzliche Kündigungsfrist nach §&nbsp;622 BGB berechnen und den frühestmöglichen letzten Arbeitstag ermitteln.</p>
+  </div>
+
+  <div class="ad-slot ad-728">Werbung · 728×90</div>
+
+  <div class="calc-card">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="startDate">Beschäftigungsbeginn</label>
+        <input type="date" id="startDate">
+        <div class="hint">Datum des Arbeitsbeginns laut Vertrag.</div>
+      </div>
+      <div class="form-group">
+        <label for="noticeDate">Datum der Kündigung</label>
+        <input type="date" id="noticeDate">
+        <div class="hint">Wann wird die Kündigung übergeben / eingereicht?</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="party">Wer kündigt?</label>
+        <select id="party">
+          <option value="employer">Arbeitgeber kündigt</option>
+          <option value="employee">Arbeitnehmer kündigt</option>
+        </select>
+        <div class="hint">Bei Arbeitgeberkündigung gelten verlängerte Fristen je nach Betriebszugehörigkeit.</div>
+      </div>
+      <div class="form-group">
+        <label for="probation">Probezeit?</label>
+        <select id="probation">
+          <option value="no">Nein</option>
+          <option value="yes">Ja – Kündigung in der Probezeit</option>
+        </select>
+        <div class="hint">In der Probezeit (max. 6 Monate) gilt eine verkürzte Frist von 2 Wochen.</div>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">▶ Kündigungsfrist berechnen</button>
+
+    <div class="result-box" id="result">
+      <div class="result-label">Frühestmögliches Arbeitsende</div>
+      <div class="result-value" id="endDateResult">–</div>
+      <div class="result-subtitle" id="endDateSubtitle"></div>
+      <div class="breakdown">
+        <div class="breakdown-row"><span>Betriebszugehörigkeit</span><span id="rTenure">–</span></div>
+        <div class="breakdown-row"><span>Gesetzliche Frist</span><span id="rFrist">–</span></div>
+        <div class="breakdown-row"><span>Kündigung eingegangen</span><span id="rNoticeDate">–</span></div>
+        <div class="breakdown-row total"><span>Frühestes Vertragsende</span><span id="rEndDate">–</span></div>
+      </div>
+      <div class="result-note">⚠️ Prüfen Sie immer Ihren Arbeitsvertrag und ggf. den Tarifvertrag auf abweichende (längere) Kündigungsfristen. Diese Berechnung basiert auf den gesetzlichen Mindestfristen nach §&nbsp;622 BGB und ist keine Rechtsberatung.</div>
+    </div>
+  </div>
+
+  <div class="ad-slot ad-300" style="margin:0 auto 1.75rem;">Werbung · 300×250</div>
+
+  <div class="info-section">
+    <h2>Gesetzliche Kündigungsfristen nach § 622 BGB</h2>
+    <p>Das Bürgerliche Gesetzbuch (BGB) regelt in § 622 die Mindestkündigungsfristen für Arbeitnehmer und Arbeitgeber:</p>
+
+    <h3>Grundfrist (für Arbeitnehmer und Arbeitgeber)</h3>
+    <p>4 Wochen zum 15. oder zum Ende eines Kalendermonats – unabhängig von der Betriebszugehörigkeit.</p>
+
+    <h3>Verlängerte Fristen für den Arbeitgeber</h3>
+    <p>Bei längerer Betriebszugehörigkeit verlängern sich die Fristen für den <strong>Arbeitgeber</strong> – jeweils zum Monatsende:</p>
+    <table style="width:100%;border-collapse:collapse;font-size:0.9rem;margin:1rem 0;">
+      <thead>
+        <tr style="background:var(--primary-light);">
+          <th style="text-align:left;padding:0.5rem 0.75rem;border-bottom:2px solid var(--border);">Betriebszugehörigkeit</th>
+          <th style="text-align:right;padding:0.5rem 0.75rem;border-bottom:2px solid var(--border);">Kündigungsfrist</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.5rem 0.75rem;">bis 2 Jahre</td><td style="text-align:right;padding:0.5rem 0.75rem;">4 Wochen zum 15. oder Monatsende</td></tr>
+        <tr style="border-bottom:1px solid var(--border);background:#f8fafc;"><td style="padding:0.5rem 0.75rem;">ab 2 Jahre</td><td style="text-align:right;padding:0.5rem 0.75rem;">1 Monat zum Monatsende</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.5rem 0.75rem;">ab 5 Jahre</td><td style="text-align:right;padding:0.5rem 0.75rem;">2 Monate zum Monatsende</td></tr>
+        <tr style="border-bottom:1px solid var(--border);background:#f8fafc;"><td style="padding:0.5rem 0.75rem;">ab 8 Jahre</td><td style="text-align:right;padding:0.5rem 0.75rem;">3 Monate zum Monatsende</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.5rem 0.75rem;">ab 10 Jahre</td><td style="text-align:right;padding:0.5rem 0.75rem;">4 Monate zum Monatsende</td></tr>
+        <tr style="border-bottom:1px solid var(--border);background:#f8fafc;"><td style="padding:0.5rem 0.75rem;">ab 12 Jahre</td><td style="text-align:right;padding:0.5rem 0.75rem;">5 Monate zum Monatsende</td></tr>
+        <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.5rem 0.75rem;">ab 15 Jahre</td><td style="text-align:right;padding:0.5rem 0.75rem;">6 Monate zum Monatsende</td></tr>
+        <tr style="background:#f8fafc;"><td style="padding:0.5rem 0.75rem;">ab 20 Jahre</td><td style="text-align:right;padding:0.5rem 0.75rem;">7 Monate zum Monatsende</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Probezeit</h3>
+    <p>Während einer vereinbarten Probezeit (maximal 6 Monate) kann das Arbeitsverhältnis mit einer Frist von <strong>2 Wochen</strong> jederzeit – also nicht nur zum 15. oder Monatsende – gekündigt werden.</p>
+
+    <h3>Außerordentliche Kündigung (fristlose Kündigung)</h3>
+    <p>Bei einem wichtigen Grund (z. B. schwere Pflichtverletzung, Diebstahl) kann das Arbeitsverhältnis fristlos beendet werden. Die Kündigung muss innerhalb von <strong>2 Wochen</strong> nach Bekanntwerden des Grundes ausgesprochen werden (§ 626 Abs. 2 BGB).</p>
+  </div>
+
+  <div class="info-section">
+    <h2>Häufige Fragen zur Kündigungsfrist</h2>
+    <div class="faq-item">
+      <div class="faq-q">Wann beginnt die Kündigungsfrist zu laufen?</div>
+      <div class="faq-a">Die Frist beginnt mit dem Zugang der Kündigung beim Empfänger. Eine Kündigung geht zu, wenn sie so in den Machtbereich des Empfängers gelangt ist, dass er sie unter normalen Umständen lesen kann (z. B. Brief im Briefkasten am Abend → Zugang erst am nächsten Werktag).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Kann mein Arbeitgeber eine längere Frist im Vertrag vereinbaren?</div>
+      <div class="faq-a">Ja. Vertragliche Verlängerungen sind zulässig, solange die für den Arbeitnehmer vereinbarte Frist nicht länger ist als die für den Arbeitgeber geltende Frist (§ 622 Abs. 6 BGB). Verkürzungen unterhalb der gesetzlichen Mindestfristen sind nur per Tarifvertrag möglich.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Zählen Zeiten aus der Probezeit für die Betriebszugehörigkeit?</div>
+      <div class="faq-a">Ja. Die Probezeit ist Teil der Betriebszugehörigkeit und fließt in die Berechnung der verlängerten Kündigungsfristen ein.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Was gilt bei befristeten Verträgen?</div>
+      <div class="faq-a">Befristete Verträge enden mit Ablauf der Befristung – eine Kündigung ist grundsätzlich nicht möglich, es sei denn, der Vertrag enthält eine Kündigungsklausel. In diesem Fall gelten die gesetzlichen Fristen.</div>
+    </div>
+  </div>
+
+  <div class="other-tools">
+    <h3>Weitere Rechner</h3>
+    <div class="other-tools-grid">
+      <a href="abfindungsrechner.html">💼 Abfindungsrechner</a>
+      <a href="nettorechner.html">💰 Nettolohn-Rechner</a>
+      <a href="urlaubsrechner.html">🏖️ Urlaubsrechner</a>
+      <a href="ueberstundenrechner.html">⏱️ Überstundenrechner</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 ArbeitsRechner.de – Alle Angaben ohne Gewähr. Keine Rechtsberatung.</div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const dateDE = d => d.toLocaleDateString('de-DE', {day:'2-digit', month:'2-digit', year:'numeric'});
+
+// End of month helper
+function endOfMonth(d) {
+  return new Date(d.getFullYear(), d.getMonth() + 1, 0);
+}
+
+// Add months to a date
+function addMonths(d, m) {
+  const result = new Date(d);
+  result.setMonth(result.getMonth() + m);
+  return result;
+}
+
+// Get notice period in months for employer based on tenure years
+function getNoticeMonths(years, probation, party) {
+  if (probation === 'yes') return 0; // 2 weeks – handled separately
+  if (party === 'employee') return 0; // 4 weeks to 15th or end – handled separately
+
+  // Employer fristen
+  if (years < 2)  return 0;  // 4 weeks – handled as base
+  if (years < 5)  return 1;
+  if (years < 8)  return 2;
+  if (years < 10) return 3;
+  if (years < 12) return 4;
+  if (years < 15) return 5;
+  if (years < 20) return 6;
+  return 7;
+}
+
+function calculate() {
+  const startInput  = document.getElementById('startDate').value;
+  const noticeInput = document.getElementById('noticeDate').value;
+  const party       = document.getElementById('party').value;
+  const probation   = document.getElementById('probation').value;
+
+  if (!startInput || !noticeInput) {
+    alert('Bitte geben Sie Beschäftigungsbeginn und Kündigungsdatum ein.');
+    return;
+  }
+
+  const startDate  = new Date(startInput);
+  const noticeDate = new Date(noticeInput);
+
+  if (noticeDate < startDate) {
+    alert('Das Kündigungsdatum darf nicht vor dem Beschäftigungsbeginn liegen.');
+    return;
+  }
+
+  // Tenure in years
+  const msPerYear = 1000 * 60 * 60 * 24 * 365.25;
+  const tenureYears = (noticeDate - startDate) / msPerYear;
+  const tenureRounded = Math.floor(tenureYears);
+
+  let endDate;
+  let fristText;
+
+  if (probation === 'yes') {
+    // 2 weeks from notice date, any day
+    endDate = new Date(noticeDate.getTime() + 14 * 24 * 60 * 60 * 1000);
+    fristText = '2 Wochen (Probezeit)';
+  } else if (party === 'employee') {
+    // 4 weeks to 15th or end of month
+    const fourWeeksLater = new Date(noticeDate.getTime() + 28 * 24 * 60 * 60 * 1000);
+    const m = fourWeeksLater.getMonth();
+    const y = fourWeeksLater.getFullYear();
+    const mid   = new Date(y, m, 15);
+    const eom   = endOfMonth(fourWeeksLater);
+    // Choose the next 15th or end of month that is >= fourWeeksLater
+    if (fourWeeksLater <= mid) { endDate = mid; }
+    else { endDate = eom; }
+    fristText = '4 Wochen zum 15. oder Monatsende';
+  } else {
+    // Employer
+    const months = getNoticeMonths(tenureRounded, probation, party);
+    if (months === 0) {
+      // Base 4 weeks to 15th or end of month
+      const fourWeeksLater = new Date(noticeDate.getTime() + 28 * 24 * 60 * 60 * 1000);
+      const m = fourWeeksLater.getMonth();
+      const y = fourWeeksLater.getFullYear();
+      const mid = new Date(y, m, 15);
+      const eom = endOfMonth(fourWeeksLater);
+      endDate = (fourWeeksLater <= mid) ? mid : eom;
+      fristText = '4 Wochen zum 15. oder Monatsende';
+    } else {
+      // N months to end of month
+      const candidate = addMonths(noticeDate, months);
+      endDate = endOfMonth(candidate);
+      fristText = months + (months === 1 ? ' Monat' : ' Monate') + ' zum Monatsende';
+    }
+  }
+
+  // Tenure display
+  const tenureYearsF = tenureYears < 1
+    ? Math.round(tenureYears * 12) + ' Monate'
+    : tenureRounded + (tenureRounded === 1 ? ' Jahr' : ' Jahre') + ' ' + Math.round((tenureYears - tenureRounded) * 12) + ' Monate';
+
+  document.getElementById('endDateResult').textContent   = dateDE(endDate);
+  document.getElementById('endDateSubtitle').textContent = 'Frühestmöglicher letzter Arbeitstag';
+  document.getElementById('rTenure').textContent         = tenureYearsF;
+  document.getElementById('rFrist').textContent          = fristText;
+  document.getElementById('rNoticeDate').textContent     = dateDE(noticeDate);
+  document.getElementById('rEndDate').textContent        = dateDE(endDate);
+
+  const box = document.getElementById('result');
+  box.classList.add('show');
+  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Default today's date for notice date
+document.addEventListener('DOMContentLoaded', () => {
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('noticeDate').value = today;
+});
+
+document.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+</script>
+</body>
+</html>

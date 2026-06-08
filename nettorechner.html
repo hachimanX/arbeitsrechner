@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nettolohn-Rechner 2025 – Bruttogehalt zu Netto berechnen | ArbeitsRechner</title>
+  <meta name="description" content="Nettolohn berechnen 2025: Monatliches Nettogehalt aus dem Bruttogehalt ermitteln – mit Steuerklasse, Kirchensteuer und Sozialversicherung. Kostenlos & ohne Anmeldung.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.arbeitsrechner.de/nettorechner.html">
+  <link rel="stylesheet" href="style.css">
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Nettolohn-Rechner 2025",
+    "description": "Bruttogehalt zu Netto berechnen mit Steuerklasse, Kirchensteuer und Sozialversicherungsbeiträgen 2025",
+    "url": "https://www.arbeitsrechner.de/nettorechner.html",
+    "inLanguage": "de",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.arbeitsrechner.de/"},
+        {"@type": "ListItem", "position": 2, "name": "Nettolohn-Rechner"}
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">⚖️ ArbeitsRechner.de</a>
+    <nav>
+      <a href="abfindungsrechner.html">Abfindung</a>
+      <a href="nettorechner.html" class="active">Nettolohn</a>
+      <a href="urlaubsrechner.html">Urlaub</a>
+      <a href="ueberstundenrechner.html">Überstunden</a>
+      <a href="kuendigungsfrist.html">Kündigung</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="calc-header">
+    <div class="breadcrumb"><a href="index.html">Home</a> › Nettolohn-Rechner</div>
+    <h1>Nettolohn-Rechner 2025</h1>
+    <p>Ermitteln Sie Ihr monatliches Nettogehalt aus dem Bruttogehalt – mit Einkommensteuer, Sozialversicherung und optionaler Kirchensteuer.</p>
+  </div>
+
+  <div class="ad-slot ad-728">Werbung · 728×90</div>
+
+  <div class="calc-card">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="gross">Monatliches Bruttogehalt (€)</label>
+        <input type="number" id="gross" placeholder="z. B. 4.000" min="0" step="50">
+        <div class="hint">Ihr monatliches Bruttoeinkommen aus dem Arbeitsvertrag.</div>
+      </div>
+      <div class="form-group">
+        <label for="taxclass">Steuerklasse</label>
+        <select id="taxclass">
+          <option value="1">Klasse I – ledig, geschieden, verwitwet</option>
+          <option value="2">Klasse II – Alleinerziehende</option>
+          <option value="3">Klasse III – verheiratet, höheres Einkommen</option>
+          <option value="4">Klasse IV – verheiratet, ähnliches Einkommen</option>
+          <option value="5">Klasse V – verheiratet, geringeres Einkommen</option>
+          <option value="6">Klasse VI – Zweit-/Nebenjob</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="church">Kirchensteuer</label>
+        <select id="church">
+          <option value="0">Nein – keine Kirchensteuer</option>
+          <option value="9">Ja – 9 % (meiste Bundesländer)</option>
+          <option value="8">Ja – 8 % (Bayern, Baden-Württemberg)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="children">Kinderfreibeträge (für Pflegeversicherung)</label>
+        <select id="children">
+          <option value="0">Keine Kinder</option>
+          <option value="1">1 Kind</option>
+          <option value="2">2 Kinder</option>
+          <option value="3">3 oder mehr Kinder</option>
+        </select>
+        <div class="hint">Relevant für den Pflegeversicherungsbeitrag.</div>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">▶ Nettolohn berechnen</button>
+
+    <div class="result-box" id="result">
+      <div class="result-label">Monatliches Nettogehalt (ca.)</div>
+      <div class="result-value" id="netValue">–</div>
+      <div class="result-subtitle" id="netSubtitle"></div>
+      <div class="breakdown">
+        <div class="breakdown-row"><span>Bruttogehalt</span><span id="rGross">–</span></div>
+        <div class="breakdown-row"><span style="padding-left:1rem; color:#64748b">− Lohnsteuer</span><span id="rLSt">–</span></div>
+        <div class="breakdown-row"><span style="padding-left:1rem; color:#64748b">− Solidaritätszuschlag</span><span id="rSoli">–</span></div>
+        <div class="breakdown-row"><span style="padding-left:1rem; color:#64748b">− Kirchensteuer</span><span id="rKiSt">–</span></div>
+        <div class="breakdown-row"><span style="padding-left:1rem; color:#64748b">− Krankenversicherung</span><span id="rKV">–</span></div>
+        <div class="breakdown-row"><span style="padding-left:1rem; color:#64748b">− Rentenversicherung</span><span id="rRV">–</span></div>
+        <div class="breakdown-row"><span style="padding-left:1rem; color:#64748b">− Arbeitslosenversicherung</span><span id="rAV">–</span></div>
+        <div class="breakdown-row"><span style="padding-left:1rem; color:#64748b">− Pflegeversicherung</span><span id="rPV">–</span></div>
+        <div class="breakdown-row total"><span>Nettolohn gesamt (ca.)</span><span id="rNet">–</span></div>
+      </div>
+      <div class="result-note">⚠️ <strong>Schätzung auf Basis 2024/2025.</strong> Der tatsächliche Nettolohn kann abweichen, da individuelle Freibeträge, Kinderfreibeträge im Lohnsteuerabzug, Sonderausgaben oder vermögenswirksame Leistungen nicht berücksichtigt sind. Für eine genaue Berechnung nutzen Sie den BMF-Lohnsteuerrechner oder fragen Sie Ihre Lohnbuchhaltung.</div>
+    </div>
+  </div>
+
+  <div class="ad-slot ad-300" style="margin:0 auto 1.75rem;">Werbung · 300×250</div>
+
+  <div class="info-section">
+    <h2>Wie wird das Nettogehalt berechnet?</h2>
+    <p>Vom Bruttogehalt werden folgende Abzüge vorgenommen, bevor der Nettolohn ausgezahlt wird:</p>
+    <h3>1. Lohnsteuer (Einkommensteuer)</h3>
+    <p>Die Lohnsteuer richtet sich nach der Steuerklasse, dem Jahreseinkommen und dem Grundfreibetrag (2024: 11.784 €). Der Steuersatz beginnt bei 14 % und steigt progressiv bis zu 45 % bei sehr hohen Einkommen.</p>
+    <h3>2. Sozialversicherungsbeiträge 2025 (Arbeitnehmeranteil)</h3>
+    <ul>
+      <li><strong>Krankenversicherung (KV):</strong> 7,3 % + durchschnittlicher Zusatzbeitrag (~1,7 %) = ca. 8,15–9,0 % je nach Kasse. Beitragsbemessungsgrenze: 5.512,50 €/Monat.</li>
+      <li><strong>Rentenversicherung (RV):</strong> 9,3 % des Bruttogehalts. BBG: 8.050 €/Monat.</li>
+      <li><strong>Arbeitslosenversicherung (AV):</strong> 1,3 % des Bruttogehalts. BBG: 8.050 €/Monat.</li>
+      <li><strong>Pflegeversicherung (PV):</strong> 1,7 % (mit einem oder mehr Kindern) bis 2,0 % (kinderlos); Zuschlag für Kinderlose +0,6 %. BBG: 5.512,50 €/Monat.</li>
+    </ul>
+    <h3>3. Kirchensteuer (optional)</h3>
+    <p>Für Mitglieder einer kirchensteuerpflichtigen Religionsgemeinschaft werden 8 % (Bayern, BW) oder 9 % (alle anderen Bundesländer) der Lohnsteuer als Kirchensteuer einbehalten.</p>
+    <h3>Steuerklassen im Überblick</h3>
+    <ul>
+      <li><strong>Klasse I:</strong> Ledige, Geschiedene, dauerhaft getrennt Lebende.</li>
+      <li><strong>Klasse II:</strong> Alleinerziehende mit Entlastungsbetrag (4.260 €/Jahr).</li>
+      <li><strong>Klasse III:</strong> Verheiratete mit höherem Einkommen; niedriger Steuersatz, da Splittingvorteil.</li>
+      <li><strong>Klasse IV:</strong> Verheiratete mit ähnlichem Einkommen; beide in Klasse IV.</li>
+      <li><strong>Klasse V:</strong> Verheiratete mit geringerem Einkommen; hoher Steuersatz.</li>
+      <li><strong>Klasse VI:</strong> Zweit- oder Nebenjob; kein Grundfreibetrag, Steuern ab dem ersten Euro.</li>
+    </ul>
+  </div>
+
+  <div class="info-section">
+    <h2>Häufige Fragen zum Nettolohn</h2>
+    <div class="faq-item">
+      <div class="faq-q">Warum stimmt mein berechnetes Netto nicht exakt mit der Gehaltsabrechnung überein?</div>
+      <div class="faq-a">Dieser Rechner verwendet Standardwerte (allgemeiner KV-Zusatzbeitrag, keine individuellen Freibeträge). Ihre Gehaltsabrechnung berücksichtigt ggf. individuelle Lohnsteuerfreibeträge, den genauen Zusatzbeitrag Ihrer Krankenkasse oder vermögenswirksame Leistungen.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Was ist der Solidaritätszuschlag?</div>
+      <div class="faq-a">Seit 2021 entfällt der Soli für rund 90 % der Steuerzahler. Er wird erst bei einer jährlichen Einkommensteuer über ca. 18.130 € (Singles) / 36.260 € (Verheiratete) anteilig erhoben – ab ca. 33.882 € Lohnsteuer (Soli-Zuschlagssatz: 5,5 %) voll fällig.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Was ist die Beitragsbemessungsgrenze (BBG)?</div>
+      <div class="faq-a">Die BBG ist die Einkommensgrenze, bis zu der Sozialversicherungsbeiträge berechnet werden. Einkommen über der BBG wird nicht mehr verbeitragt. 2025 liegt die BBG für die KV/PV bei 5.512,50 €/Monat und für die RV/AV bei 8.050 €/Monat (West).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Lohnt sich ein Steuerklassenwechsel?</div>
+      <div class="faq-a">Ein Wechsel von Klasse IV/IV zu III/V lohnt sich, wenn ein Ehepartner deutlich mehr verdient. Der Besserverdienende wählt Klasse III (weniger Steuer), der andere Klasse V (mehr Steuer). Netto insgesamt gleich, aber monatlich mehr beim Hauptverdiener.</div>
+    </div>
+  </div>
+
+  <div class="other-tools">
+    <h3>Weitere Rechner</h3>
+    <div class="other-tools-grid">
+      <a href="abfindungsrechner.html">💼 Abfindungsrechner</a>
+      <a href="urlaubsrechner.html">🏖️ Urlaubsrechner</a>
+      <a href="ueberstundenrechner.html">⏱️ Überstundenrechner</a>
+      <a href="kuendigungsfrist.html">📄 Kündigungsfristrechner</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 ArbeitsRechner.de – Alle Angaben ohne Gewähr. Keine Steuer- oder Rechtsberatung.</div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const fmt  = (n, dec=0) => new Intl.NumberFormat('de-DE', {style:'currency', currency:'EUR', minimumFractionDigits:dec, maximumFractionDigits:dec}).format(n);
+const fmtN = (n) => '− ' + fmt(n);
+
+// 2024 income tax formula (§ 32a EStG)
+function annualTax(zve) {
+  zve = Math.max(0, Math.round(zve));
+  if (zve <=  11784) return 0;
+  if (zve <=  17005) { const y=(zve-11784)/10000; return Math.round((922.98*y+1400)*y); }
+  if (zve <=  66760) { const y=(zve-17005)/10000; return Math.round((181.19*y+2397)*y+1025.38); }
+  if (zve <= 277825) return Math.round(0.42*zve-10602.13);
+  return Math.round(0.45*zve-17936.25);
+}
+
+function monthlyLSt(grossMonthly, taxClass) {
+  const annual = grossMonthly * 12;
+  let zve = annual;
+
+  // Steuerklasse adjustments (simplified)
+  // Klasse II: Entlastungsbetrag 4260
+  if (taxClass === 2) zve = Math.max(0, zve - 4260);
+  // Klasse III: Splitting – effectively double Grundfreibetrag approach
+  if (taxClass === 3) return annualTax(zve * 2) / 2 / 12;
+  // Klasse V: no Grundfreibetrag advantage
+  if (taxClass === 5) return Math.max(0, (annualTax(zve + 11784) - annualTax(11784))) / 12;
+  // Klasse VI: no Grundfreibetrag at all
+  if (taxClass === 6) return annualTax(annual) / 12;
+
+  // Klasse I and IV
+  return annualTax(zve) / 12;
+}
+
+function calculate() {
+  const gross    = parseFloat(document.getElementById('gross').value)    || 0;
+  const taxClass = parseInt(document.getElementById('taxclass').value);
+  const churchPct= parseFloat(document.getElementById('church').value);
+  const children = parseInt(document.getElementById('children').value);
+
+  if (gross <= 0) { alert('Bitte geben Sie ein gültiges Bruttogehalt ein.'); return; }
+
+  // ── Lohnsteuer ──
+  const lst = Math.max(0, monthlyLSt(gross, taxClass));
+
+  // ── Soli (since 2021 mostly abolished) ──
+  // Soli applies only when annual lst > 18130 (single) – approx monthly >1510
+  // Freigrenze 2024: annual LSt > 18,130 € → monthly > 1,510.83 €
+  const annualLst = lst * 12;
+  let soli = 0;
+  if (annualLst > 18130) {
+    soli = Math.min(lst * 0.055, (annualLst - 18130) * 0.055 / 12);
+  }
+
+  // ── Kirchensteuer ──
+  const kist = lst * (churchPct / 100);
+
+  // ── Sozialversicherung ──
+  // 2025 rates & caps (monthly)
+  const KV_RATE = 0.0815;  // 7.3% + 1.7% Zusatzbeitrag / 2 = employee share ≈ 8.15%
+  const KV_CAP  = 5512.50;
+  const RV_RATE = 0.093;
+  const RV_CAP  = 8050;
+  const AV_RATE = 0.013;
+  const AV_CAP  = 8050;
+
+  // PV rate depends on children
+  const PV_RATES = [0.020, 0.0185, 0.0170, 0.0155]; // 0,1,2,3+children
+  const PV_RATE  = PV_RATES[Math.min(children, 3)];
+  const PV_CAP   = 5512.50;
+
+  const kv = Math.min(gross, KV_CAP) * KV_RATE;
+  const rv = Math.min(gross, RV_CAP) * RV_RATE;
+  const av = Math.min(gross, AV_CAP) * AV_RATE;
+  const pv = Math.min(gross, PV_CAP) * PV_RATE;
+
+  const totalDeductions = lst + soli + kist + kv + rv + av + pv;
+  const net = gross - totalDeductions;
+
+  // ── Display ──
+  document.getElementById('netValue').textContent    = fmt(net);
+  document.getElementById('netSubtitle').textContent = `von ${fmt(gross)} Brutto`;
+  document.getElementById('rGross').textContent      = fmt(gross);
+  document.getElementById('rLSt').textContent        = fmtN(lst);
+  document.getElementById('rSoli').textContent       = soli > 0 ? fmtN(soli) : '0,00 €';
+  document.getElementById('rKiSt').textContent       = churchPct > 0 ? fmtN(kist) : '0,00 €';
+  document.getElementById('rKV').textContent         = fmtN(kv);
+  document.getElementById('rRV').textContent         = fmtN(rv);
+  document.getElementById('rAV').textContent         = fmtN(av);
+  document.getElementById('rPV').textContent         = fmtN(pv);
+  document.getElementById('rNet').textContent        = fmt(net);
+
+  const box = document.getElementById('result');
+  box.classList.add('show');
+  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+</script>
+</body>
+</html>

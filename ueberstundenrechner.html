@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Überstundenrechner 2025 – Überstunden & Vergütung berechnen | ArbeitsRechner</title>
+  <meta name="description" content="Überstunden berechnen 2025: Kostenloser Überstundenrechner für Deutschland. Anzahl Überstunden ermitteln und Vergütungsanspruch in Euro berechnen.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.arbeitsrechner.de/ueberstundenrechner.html">
+  <link rel="stylesheet" href="style.css">
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">⚖️ ArbeitsRechner.de</a>
+    <nav>
+      <a href="abfindungsrechner.html">Abfindung</a>
+      <a href="nettorechner.html">Nettolohn</a>
+      <a href="urlaubsrechner.html">Urlaub</a>
+      <a href="ueberstundenrechner.html" class="active">Überstunden</a>
+      <a href="kuendigungsfrist.html">Kündigung</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="calc-header">
+    <div class="breadcrumb"><a href="index.html">Home</a> › Überstundenrechner</div>
+    <h1>Überstundenrechner 2025</h1>
+    <p>Geleistete Überstunden berechnen und den Vergütungsanspruch in Euro ermitteln – schnell und kostenlos.</p>
+  </div>
+
+  <div class="ad-slot ad-728">Werbung · 728×90</div>
+
+  <div class="calc-card">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="contracted">Vertragliche Wochenstunden</label>
+        <input type="number" id="contracted" placeholder="z. B. 40" min="1" max="60" step="0.5" value="40">
+        <div class="hint">Die vertraglich vereinbarte Wochenarbeitszeit.</div>
+      </div>
+      <div class="form-group">
+        <label for="actual">Tatsächlich geleistete Stunden</label>
+        <input type="number" id="actual" placeholder="z. B. 46" min="0" max="80" step="0.5">
+        <div class="hint">Die tatsächlich gearbeiteten Stunden in der gleichen Woche.</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="monthlySalary">Monatliches Bruttogehalt (€)</label>
+        <input type="number" id="monthlySalary" placeholder="z. B. 3.500" min="0" step="50">
+        <div class="hint">Ihr monatliches Bruttogehalt laut Arbeitsvertrag.</div>
+      </div>
+      <div class="form-group">
+        <label for="surcharge">Überstundenzuschlag</label>
+        <select id="surcharge">
+          <option value="0">0 % – Kein Zuschlag (Grundvergütung)</option>
+          <option value="25">25 % – Üblich in vielen Tarifverträgen</option>
+          <option value="50">50 % – Häufig für Sonn-/Feiertage</option>
+          <option value="100">100 % – Feiertagszuschlag</option>
+        </select>
+        <div class="hint">Laut Arbeitsvertrag oder Tarifvertrag vereinbarter Zuschlag.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="weeks">Anzahl Wochen (für Gesamtberechnung)</label>
+      <input type="number" id="weeks" placeholder="z. B. 4" value="1" min="1" max="52">
+      <div class="hint">Über wie viele Wochen soll die Berechnung erfolgen?</div>
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">▶ Überstunden berechnen</button>
+
+    <div class="result-box" id="result">
+      <div class="result-label">Überstunden-Vergütung (Brutto)</div>
+      <div class="result-value" id="payResult">–</div>
+      <div class="result-subtitle" id="paySubtitle"></div>
+      <div class="breakdown">
+        <div class="breakdown-row"><span>Stundenlohn (Brutto)</span><span id="rHourly">–</span></div>
+        <div class="breakdown-row"><span>Überstunden pro Woche</span><span id="rOTperWeek">–</span></div>
+        <div class="breakdown-row"><span>Anzahl Wochen</span><span id="rWeeks">–</span></div>
+        <div class="breakdown-row"><span>Überstunden gesamt</span><span id="rTotalHours">–</span></div>
+        <div class="breakdown-row"><span>Stundensatz mit Zuschlag</span><span id="rRateWithSurcharge">–</span></div>
+        <div class="breakdown-row total"><span>Vergütung gesamt (Brutto)</span><span id="rTotalPay">–</span></div>
+      </div>
+      <div class="result-note">⚠️ <strong>Hinweis:</strong> Ein gesetzlicher Anspruch auf Überstundenvergütung besteht nur, wenn dies vertraglich oder tariflich vereinbart ist. Viele Arbeitsverträge sehen "Überstunden mit dem Gehalt abgegolten" vor – dann haben Sie nur Anspruch auf Freizeitausgleich. Die Berechnung ist eine Schätzung (Brutto).</div>
+    </div>
+  </div>
+
+  <div class="ad-slot ad-300" style="margin:0 auto 1.75rem;">Werbung · 300×250</div>
+
+  <div class="info-section">
+    <h2>Alles über Überstunden in Deutschland</h2>
+    <p>Überstunden sind die Arbeitsstunden, die über die vertraglich vereinbarte Arbeitszeit hinausgehen. Ob und wie sie vergütet werden, hängt maßgeblich vom Arbeitsvertrag und ggf. vom anwendbaren Tarifvertrag ab.</p>
+
+    <h3>Wie wird der Stundenlohn aus dem Monatsgehalt berechnet?</h3>
+    <div class="formula-box">Stundenlohn = Monatsgehalt × 12 ÷ (Wochenstunden × 52)</div>
+    <p>Beispiel: 3.500 € Brutto bei 40 Stunden/Woche = 3.500 × 12 ÷ 2.080 = <strong>20,19 €/Stunde</strong></p>
+
+    <h3>Muss der Arbeitgeber Überstunden bezahlen?</h3>
+    <p>Einen allgemeinen gesetzlichen Vergütungsanspruch für Überstunden gibt es in Deutschland nicht. Die Verpflichtung entsteht durch:</p>
+    <ul>
+      <li><strong>Arbeitsvertrag:</strong> Klausel über Überstundenvergütung oder -zuschläge.</li>
+      <li><strong>Tarifvertrag:</strong> Häufig Zuschläge von 25–50 % festgelegt.</li>
+      <li><strong>Betriebsvereinbarung:</strong> Kann Regelungen zu Überstundenausgleich enthalten.</li>
+      <li><strong>Betriebliche Übung:</strong> Wenn der Arbeitgeber jahrelang Überstunden bezahlt hat.</li>
+    </ul>
+
+    <h3>Arbeitszeitgesetz: Grenzen für Überstunden</h3>
+    <p>Das Arbeitszeitgesetz (ArbZG) setzt der Mehrarbeit Grenzen:</p>
+    <ul>
+      <li>Maximal <strong>8 Stunden/Tag</strong> regulär – ausnahmsweise bis 10 Stunden.</li>
+      <li>Der Ausgleich auf maximal 8 Stunden/Tag muss innerhalb von <strong>6 Kalendermonaten</strong> erfolgen.</li>
+      <li>Mindestens <strong>11 Stunden Ruhezeit</strong> zwischen zwei Arbeitstagen.</li>
+      <li>An Sonn- und Feiertagen gilt grundsätzlich Beschäftigungsverbot.</li>
+    </ul>
+
+    <h3>Freizeitausgleich statt Bezahlung</h3>
+    <p>Viele Unternehmen gewähren statt Geldvergütung Freizeitausgleich (Gleitzeitkonto). Dies ist rechtlich zulässig, wenn es vereinbart ist. Verfallen Überstunden auf dem Arbeitszeitkonto ohne Ausgleich, muss der Arbeitgeber diese in Geld vergüten.</p>
+  </div>
+
+  <div class="info-section">
+    <h2>Häufige Fragen zu Überstunden</h2>
+    <div class="faq-item">
+      <div class="faq-q">Darf mein Arbeitgeber Überstunden anordnen?</div>
+      <div class="faq-a">Nur wenn der Arbeitsvertrag oder Tarifvertrag dies vorsieht. Ohne eine solche Regelung darf der Arbeitgeber Überstunden nur in echten Notfällen verlangen. Generell gilt: Überstunden bedürfen der Anordnung oder zumindest der Duldung durch den Arbeitgeber.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Verfallen meine Überstunden?</div>
+      <div class="faq-a">Überstunden verjähren nach der allgemeinen zivilrechtlichen Frist von <strong>3 Jahren</strong> (§ 195 BGB). Viele Arbeitsverträge enthalten aber kürzere Ausschlussfristen (häufig 3–6 Monate). Lesen Sie Ihren Vertrag sorgfältig!</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Kann mein Vertrag Überstunden pauschal abgelten?</div>
+      <div class="faq-a">Ja, aber mit Grenzen. Klauseln wie "Überstunden bis zu 20 Stunden/Monat sind mit dem Gehalt abgegolten" sind zulässig, wenn die Anzahl der abgegoltenen Überstunden klar begrenzt und das Verhältnis zum Gehalt angemessen ist. Pauschale Klauseln ohne Mengenbegrenzung sind unwirksam.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Wie beweise ich geleistete Überstunden?</div>
+      <div class="faq-a">Führen Sie ein detailliertes Stundenprotokoll mit Datum, Beginn, Ende und Unterbrechungen. E-Mails, Zutrittsprotokolle oder Zeugen können als Nachweis dienen. Seit dem EuGH-Urteil "Stichting" (2019) sind Arbeitgeber verpflichtet, ein System zur Arbeitszeiterfassung einzurichten.</div>
+    </div>
+  </div>
+
+  <div class="other-tools">
+    <h3>Weitere Rechner</h3>
+    <div class="other-tools-grid">
+      <a href="abfindungsrechner.html">💼 Abfindungsrechner</a>
+      <a href="nettorechner.html">💰 Nettolohn-Rechner</a>
+      <a href="urlaubsrechner.html">🏖️ Urlaubsrechner</a>
+      <a href="kuendigungsfrist.html">📄 Kündigungsfristrechner</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 ArbeitsRechner.de – Alle Angaben ohne Gewähr. Keine Rechtsberatung.</div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const fmt = (n,d=2) => new Intl.NumberFormat('de-DE', {style:'currency', currency:'EUR', minimumFractionDigits:d, maximumFractionDigits:d}).format(n);
+const fmtH = n => n.toFixed(2).replace('.', ',') + ' Std.';
+
+function calculate() {
+  const contracted = parseFloat(document.getElementById('contracted').value) || 0;
+  const actual     = parseFloat(document.getElementById('actual').value)     || 0;
+  const salary     = parseFloat(document.getElementById('monthlySalary').value) || 0;
+  const surcharge  = parseFloat(document.getElementById('surcharge').value)  || 0;
+  const weeks      = parseInt(document.getElementById('weeks').value)        || 1;
+
+  if (contracted <= 0) { alert('Bitte geben Sie die vertraglichen Wochenstunden ein.'); return; }
+  if (actual <= contracted) { alert('Die tatsächlichen Stunden müssen die vertraglichen übersteigen.'); return; }
+  if (salary <= 0) { alert('Bitte geben Sie das monatliche Bruttogehalt ein.'); return; }
+
+  const otPerWeek    = actual - contracted;
+  const totalOT      = otPerWeek * weeks;
+  const hourlyRate   = (salary * 12) / (contracted * 52);
+  const rateWithSurcharge = hourlyRate * (1 + surcharge / 100);
+  const totalPay     = totalOT * rateWithSurcharge;
+
+  document.getElementById('payResult').textContent      = fmt(totalPay);
+  document.getElementById('paySubtitle').textContent    = `für ${totalOT.toFixed(1).replace('.',',')} Überstunden`;
+  document.getElementById('rHourly').textContent        = fmt(hourlyRate) + '/Std.';
+  document.getElementById('rOTperWeek').textContent     = fmtH(otPerWeek);
+  document.getElementById('rWeeks').textContent         = weeks + (weeks === 1 ? ' Woche' : ' Wochen');
+  document.getElementById('rTotalHours').textContent    = fmtH(totalOT);
+  document.getElementById('rRateWithSurcharge').textContent = fmt(rateWithSurcharge) + '/Std.' + (surcharge > 0 ? ` (+${surcharge}%)` : '');
+  document.getElementById('rTotalPay').textContent      = fmt(totalPay);
+
+  const box = document.getElementById('result');
+  box.classList.add('show');
+  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+</script>
+</body>
+</html>

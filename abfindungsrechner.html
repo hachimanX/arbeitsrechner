@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abfindungsrechner 2025 – Abfindung kostenlos berechnen | ArbeitsRechner</title>
+  <meta name="description" content="Abfindung berechnen 2025: Kostenloser Abfindungsrechner für Deutschland. Formel: Beschäftigungsjahre × 0,5 × Monatsgehalt. Ergebnis sofort, ohne Anmeldung.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.arbeitsrechner.de/abfindungsrechner.html">
+  <link rel="stylesheet" href="style.css">
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Abfindungsrechner 2025",
+    "description": "Kostenloses Tool zur Berechnung der Abfindungshöhe in Deutschland",
+    "url": "https://www.arbeitsrechner.de/abfindungsrechner.html",
+    "inLanguage": "de",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.arbeitsrechner.de/"},
+        {"@type": "ListItem", "position": 2, "name": "Abfindungsrechner"}
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie wird die Abfindung berechnet?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Die Standardformel lautet: Abfindung = Beschäftigungsjahre × 0,5 × Monatsbruttogehalt. Diese Faustformel gilt als anerkannter Ausgangspunkt bei Verhandlungen und Gerichtsverfahren."}
+      },
+      {
+        "@type": "Question",
+        "name": "Habe ich einen gesetzlichen Anspruch auf Abfindung?",
+        "acceptedAnswer": {"@type": "Answer", "text": "In Deutschland gibt es keinen allgemeinen gesetzlichen Abfindungsanspruch. Nach § 1a KSchG kann der Arbeitnehmer eine Abfindung beanspruchen, wenn der Arbeitgeber auf das Recht zur Kündigungsschutzklage verzichtet. Ansonsten entsteht ein Anspruch meist durch Tarifvertrag, Betriebsvereinbarung oder Verhandlung."}
+      },
+      {
+        "@type": "Question",
+        "name": "Muss ich Steuern auf die Abfindung zahlen?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Ja, Abfindungen sind grundsätzlich steuerpflichtig. Es gibt jedoch die sogenannte Fünftelregelung (§ 34 EStG), die eine steuerbegünstigte Behandlung ermöglicht und die Steuerlast erheblich senken kann."}
+      },
+      {
+        "@type": "Question",
+        "name": "Wie beeinflusst eine Abfindung das Arbeitslosengeld?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Eine Abfindung selbst kürzt das Arbeitslosengeld nicht direkt. Wenn jedoch die Kündigungsfrist nicht eingehalten wird (z. B. bei Aufhebungsvertrag), kann eine Sperrzeit von bis zu 12 Wochen beim Arbeitslosengeld verhängt werden."}
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">⚖️ ArbeitsRechner.de</a>
+    <nav>
+      <a href="abfindungsrechner.html" class="active">Abfindung</a>
+      <a href="nettorechner.html">Nettolohn</a>
+      <a href="urlaubsrechner.html">Urlaub</a>
+      <a href="ueberstundenrechner.html">Überstunden</a>
+      <a href="kuendigungsfrist.html">Kündigung</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="calc-header">
+    <div class="breadcrumb"><a href="index.html">Home</a> › Abfindungsrechner</div>
+    <h1>Abfindungsrechner 2025</h1>
+    <p>Berechnen Sie Ihre voraussichtliche Abfindungshöhe anhand der deutschen Faustformel – kostenlos und sofort.</p>
+  </div>
+
+  <!-- AdSense Leaderboard -->
+  <div class="ad-slot ad-728">Werbung · 728×90</div>
+
+  <div class="calc-card">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="salary">Monatliches Bruttogehalt (€)</label>
+        <input type="number" id="salary" placeholder="z. B. 3.500" min="0" step="50">
+        <div class="hint">Ihr aktuelles monatliches Bruttoeinkommen in Euro.</div>
+      </div>
+      <div class="form-group">
+        <label for="years">Betriebszugehörigkeit (Jahre)</label>
+        <input type="number" id="years" placeholder="z. B. 8" min="0" step="0.5">
+        <div class="hint">Vollendete Beschäftigungsjahre; halbe Jahre möglich.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="factor">Abfindungsfaktor</label>
+      <select id="factor">
+        <option value="0.5">0,5 – Gesetzlicher Richtwert (§ 1a KSchG)</option>
+        <option value="0.75">0,75 – Überdurchschnittlich</option>
+        <option value="1.0">1,0 – Sehr gute Verhandlung</option>
+        <option value="1.5">1,5 – Exzellentes Ergebnis</option>
+        <option value="custom">Eigener Faktor…</option>
+      </select>
+      <div class="hint">Faktor 0,5 ist der gesetzliche Ausgangspunkt. Erfahrene Anwälte erreichen oft 0,75–1,0.</div>
+    </div>
+    <div class="form-group" id="customFactorGroup" style="display:none;">
+      <label for="customFactor">Eigener Faktor</label>
+      <input type="number" id="customFactor" placeholder="z. B. 0,8" min="0" max="5" step="0.05">
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">▶ Abfindung berechnen</button>
+
+    <div class="result-box" id="result">
+      <div class="result-label">Voraussichtliche Abfindung (Brutto)</div>
+      <div class="result-value" id="abfindungValue">–</div>
+      <div class="result-subtitle" id="abfindungMonths"></div>
+      <div class="breakdown">
+        <div class="breakdown-row"><span>Monatliches Bruttogehalt</span><span id="rSalary">–</span></div>
+        <div class="breakdown-row"><span>Beschäftigungsjahre</span><span id="rYears">–</span></div>
+        <div class="breakdown-row"><span>Abfindungsfaktor</span><span id="rFactor">–</span></div>
+        <div class="breakdown-row total"><span>Abfindung gesamt (Brutto)</span><span id="rTotal">–</span></div>
+      </div>
+      <div class="result-note">⚠️ <strong>Hinweis:</strong> Diese Berechnung ist eine unverbindliche Schätzung nach der Faustformel. In Deutschland besteht <em>kein allgemeiner gesetzlicher Abfindungsanspruch</em>. Die tatsächliche Abfindung hängt von Verhandlung, Tarifvertrag und den Umständen der Kündigung ab. Für verbindliche Auskunft wenden Sie sich an einen <strong>Fachanwalt für Arbeitsrecht</strong>.</div>
+    </div>
+  </div>
+
+  <!-- AdSense Rectangle -->
+  <div class="ad-slot ad-300" style="margin:0 auto 1.75rem;">Werbung · 300×250</div>
+
+  <div class="info-section">
+    <h2>So wird die Abfindung berechnet</h2>
+    <p>Es gibt in Deutschland keine gesetzlich vorgeschriebene Berechnungsmethode für Abfindungen. Die anerkannte <strong>Faustformel</strong>, auf die sich Gerichte, Anwälte und Arbeitgeber beziehen, lautet:</p>
+    <div class="formula-box">Abfindung = Beschäftigungsjahre × 0,5 × Monatsbruttogehalt</div>
+    <p>Der Faktor 0,5 ist in § 1a Abs. 2 KSchG (Kündigungsschutzgesetz) verankert. Er dient als Untergrenze; in Verhandlungen werden je nach Branche und Unternehmensgröße häufig Faktoren zwischen 0,5 und 1,5 erzielt.</p>
+    <h3>Einflussfaktoren auf die Abfindungshöhe</h3>
+    <ul>
+      <li><strong>Betriebszugehörigkeit:</strong> Jedes vollendete Jahr erhöht die Abfindung. Ab dem 2., 5. und 8. Dienstjahr steigen auch die gesetzlichen Kündigungsfristen.</li>
+      <li><strong>Monatsgehalt:</strong> Als Basis gilt das <em>regelmäßige</em> Bruttomonatsgehalt. Boni und Sonderzahlungen können je nach Vertrag einzurechnen sein.</li>
+      <li><strong>Alter des Arbeitnehmers:</strong> Ältere Arbeitnehmer ab 50 erhalten vor Gericht oft höhere Faktoren (eingeschränkte Vermittelbarkeit).</li>
+      <li><strong>Betriebsgröße &amp; Sozialplan:</strong> Betriebe mit mehr als 20 Arbeitnehmern unterliegen dem Kündigungsschutzgesetz. Sozialplanvereinbarungen legen oft pauschale Abfindungsregeln fest.</li>
+      <li><strong>Kündigungsgrund:</strong> Bei betriebsbedingter Kündigung ist die Abfindungsbereitschaft des Arbeitgebers in der Regel höher als bei verhaltensbedingter.</li>
+    </ul>
+    <h3>Besteuerung der Abfindung: Fünftelregelung</h3>
+    <p>Abfindungen sind steuerpflichtig. Über die <strong>Fünftelregelung (§ 34 EStG)</strong> wird die Abfindung fiktiv auf fünf Jahre verteilt: Das Finanzamt berechnet die Einkommensteuer so, als hätten Sie ein Fünftel der Abfindung in fünf aufeinanderfolgenden Jahren erhalten. Das senkt den Steuersatz erheblich.</p>
+    <p>Wichtig: Die Fünftelregelung gilt nur, wenn die Abfindung eine <em>Zusammenballung von Einkünften</em> in einem einzigen Veranlagungszeitraum darstellt. Ratenzahlungen über zwei Kalenderjahre können die Vergünstigung gefährden.</p>
+  </div>
+
+  <div class="info-section">
+    <h2>Häufige Fragen zur Abfindung</h2>
+    <div class="faq-item">
+      <div class="faq-q">Habe ich bei betriebsbedingter Kündigung Anspruch auf Abfindung?</div>
+      <div class="faq-a">Nicht automatisch. Viele Arbeitgeber bieten jedoch eine Abfindung an, um eine Kündigungsschutzklage zu vermeiden. Reichen Sie innerhalb von <strong>3 Wochen</strong> nach Zugang der Kündigung Klage beim Arbeitsgericht ein – das verbessert Ihre Verhandlungsposition erheblich.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Was ist der Unterschied zwischen Kündigung und Aufhebungsvertrag?</div>
+      <div class="faq-a">Bei einer einseitigen Kündigung durch den Arbeitgeber gelten die gesetzlichen Kündigungsfristen. Ein Aufhebungsvertrag beendet das Arbeitsverhältnis einvernehmlich – die Abfindung wird frei verhandelt. <strong>Achtung:</strong> Ein Aufhebungsvertrag kann zu einer Sperrzeit beim Arbeitslosengeld (bis zu 12 Wochen) führen!</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Wie viel Abfindung ist bei 10 Jahren üblich?</div>
+      <div class="faq-a">Bei 10 Beschäftigungsjahren und einem Bruttogehalt von 3.500 € wäre die Standardabfindung <strong>17.500 €</strong> (10 × 0,5 × 3.500 €). Dies ist ein Richtwert – viele erzielen mit anwaltlicher Hilfe 30.000–45.000 € bei gleicher Ausgangslage.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Zählen Teilzeitjahre bei der Abfindungsberechnung?</div>
+      <div class="faq-a">Ja, auch Teilzeitjahre zählen für die Betriebszugehörigkeit. Das Monatsgehalt wird jedoch anhand des tatsächlichen (Teilzeit-)Bruttogehalts berechnet, nicht des Vollzeitäquivalents.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Was passiert, wenn ich die Abfindung ablehne?</div>
+      <div class="faq-a">Sie können ein Abfindungsangebot ablehnen und stattdessen auf Weiterbeschäftigung klagen. Ein Arbeitsgericht kann Ihnen bei Obsiegen dann ebenfalls eine Abfindung zusprechen (§ 9 KSchG), wenn eine weitere Zusammenarbeit unzumutbar ist.</div>
+    </div>
+  </div>
+
+  <div class="other-tools">
+    <h3>Weitere Rechner</h3>
+    <div class="other-tools-grid">
+      <a href="nettorechner.html">💰 Nettolohn-Rechner</a>
+      <a href="urlaubsrechner.html">🏖️ Urlaubsrechner</a>
+      <a href="ueberstundenrechner.html">⏱️ Überstundenrechner</a>
+      <a href="kuendigungsfrist.html">📄 Kündigungsfristrechner</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 ArbeitsRechner.de – Alle Angaben ohne Gewähr. Keine Rechtsberatung.</div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const fmt = n => new Intl.NumberFormat('de-DE', {style:'currency', currency:'EUR', maximumFractionDigits:0}).format(n);
+
+document.getElementById('factor').addEventListener('change', function() {
+  document.getElementById('customFactorGroup').style.display =
+    this.value === 'custom' ? 'block' : 'none';
+});
+
+function calculate() {
+  const salary = parseFloat(document.getElementById('salary').value) || 0;
+  const years  = parseFloat(document.getElementById('years').value)  || 0;
+  const fSel   = document.getElementById('factor').value;
+  const factor = fSel === 'custom'
+    ? (parseFloat(document.getElementById('customFactor').value) || 0)
+    : parseFloat(fSel);
+
+  if (salary <= 0) { alert('Bitte geben Sie ein gültiges Bruttogehalt ein.'); return; }
+  if (years  <= 0) { alert('Bitte geben Sie die Betriebszugehörigkeit ein.'); return; }
+  if (factor <= 0) { alert('Bitte wählen Sie einen gültigen Faktor.'); return; }
+
+  const total = salary * years * factor;
+  const months = (years * factor).toFixed(1);
+
+  document.getElementById('abfindungValue').textContent = fmt(total);
+  document.getElementById('abfindungMonths').textContent = `entspricht ${months} Monatsgehältern`;
+  document.getElementById('rSalary').textContent = fmt(salary);
+  document.getElementById('rYears').textContent  = years + (years === 1 ? ' Jahr' : ' Jahre');
+  document.getElementById('rFactor').textContent = factor.toFixed(2).replace('.', ',');
+  document.getElementById('rTotal').textContent  = fmt(total);
+
+  const box = document.getElementById('result');
+  box.classList.add('show');
+  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+</script>
+</body>
+</html>
